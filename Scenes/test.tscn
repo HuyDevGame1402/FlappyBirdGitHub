@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://bh1wxo48r5ci3"]
+
+[ext_resource type="Script" path="res://Scripts/test.gd" id="1_njpdl"]
+[ext_resource type="Texture2D" uid="uid://p8ewp6hv5suu" path="res://Assets/Giao_Diện-Game.png" id="2_dcda7"]
+[ext_resource type="PackedScene" uid="uid://ck40mgtxqf04c" path="res://Scenes/area_2d.tscn" id="3_wug38"]
+[ext_resource type="PackedScene" uid="uid://d1h4cmcipqdim" path="res://Scenes/area_2d_1.tscn" id="4_7vuut"]
+[ext_resource type="PackedScene" uid="uid://vdwqbj71wv4v" path="res://Scenes/player.tscn" id="5_jx888"]
+
+[node name="test" type="Node2D"]
+script = ExtResource("1_njpdl")
+column_down = ExtResource("3_wug38")
+column_up = ExtResource("4_7vuut")
+
+[node name="GiaoDiện-game" type="Sprite2D" parent="."]
+position = Vector2(180, 316)
+texture = ExtResource("2_dcda7")
+
+[node name="player" parent="." instance=ExtResource("5_jx888")]
+position = Vector2(89, 318)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Score: "
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "0"
+
+[node name="Label3" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Max Score: "
+
+[node name="Label4" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "0"
